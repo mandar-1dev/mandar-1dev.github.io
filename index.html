@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mandar Suryavanshi — AI Engineer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;600&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-bar"></div>
+            <p class="loader-text">INITIALIZING<span class="blink">_</span></p>
+            <div class="loader-percent" id="loaderPercent">0%</div>
+        </div>
+    </div>
+
+    <canvas id="bgCanvas"></canvas>
+
+    <nav class="nav" id="nav">
+        <div class="nav-logo">
+            <span class="logo-bracket">&lt;</span>MS<span class="logo-bracket">/&gt;</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            <span class="status-text">Available for hire</span>
+        </div>
+        <button class="nav-toggle" id="navToggle">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about" class="mob-link">About</a></li>
+            <li><a href="#skills" class="mob-link">Skills</a></li>
+            <li><a href="#projects" class="mob-link">Projects</a></li>
+            <li><a href="#education" class="mob-link">Education</a></li>
+            <li><a href="#contact" class="mob-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow reveal-up">
+                <span class="eyebrow-line"></span>
+                <span>Computer Science · Data Science · AI Engineer</span>
+                <span class="eyebrow-line"></span>
+            </div>
+            <h1 class="hero-name reveal-up">
+                <span class="name-word glitch" data-text="MANDAR">MANDAR</span>
+                <span class="name-word name-last glitch" data-text="SURYAVANSHI">SURYAVANSHI</span>
+            </h1>
+            <p class="hero-tagline reveal-up">
+                <span class="typed-text" id="typedText"></span><span class="type-cursor">|</span>
+            </p>
+            <div class="hero-cta reveal-up">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-ghost">Get in Touch</a>
+            </div>
+            <div class="hero-socials reveal-up">
+                <a href="https://github.com/mandar-1dev" target="_blank" class="social-link" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.43 7.86 10.96.57.1.78-.25.78-.55v-2.12c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.19-1.48 3.15-1.17 3.15-1.17.63 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.13v3.16c0 .31.2.66.79.55C20.22 21.43 23.5 17.1 23.5 12 23.5 5.73 18.27.5 12 .5z" />
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/in/mandar-acse" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z" />
+                    </svg>
+                </a>
+                <a href="mailto:mandar.acse4@gmail.com" class="social-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+        <div class="hero-floating-tags">
+            <span class="ftag" style="--d:0s;  --x:8%;  --y:22%">Python</span>
+            <span class="ftag" style="--d:.8s; --x:78%; --y:18%">FastAPI</span>
+            <span class="ftag" style="--d:1.6s;--x:72%; --y:72%">LangChain</span>
+            <span class="ftag" style="--d:.4s; --x:5%;  --y:68%">Docker</span>
+            <span class="ftag" style="--d:1.2s;--x:48%; --y:83%">RAG</span>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-label reveal-up">01 // ABOUT</div>
+            <div class="about-grid">
+                <div class="about-text reveal-left">
+                    <h2 class="section-title">Building Intelligent<br /><em>Systems</em> That Think</h2>
+                    <p class="about-desc">
+                        Detail-oriented B.Tech Computer Science (Data Science) student with hands-on experience in
+                        AI-based systems, web development, and automation. Strong foundation in object-oriented
+                        programming and problem-solving — actively seeking opportunities to apply technical skills in
+                        real-world software and AI-driven applications.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-num" data-count="9">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-count="8">0</span>
+                            <span class="stat-label">Tech Stacks</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num" data-count="841" data-suffix="">8.41</span>
+                            <span class="stat-label">CGPA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-card-wrap reveal-right">
+                    <div class="about-card">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <span class="card-dot red"></span>
+                            <span class="card-dot yellow"></span>
+                            <span class="card-dot green"></span>
+                            <span class="card-title">mandar.config.json</span>
+                        </div>
+                        <pre class="card-code"><code><span class="c-brace">{</span>
+  <span class="c-key">"name"</span>: <span class="c-str">"Mandar Suryavanshi"</span>,
+  <span class="c-key">"role"</span>: <span class="c-str">"Computer Science Student"</span>,
+  <span class="c-key">"location"</span>: <span class="c-str">"Pune, India"</span>,
+  <span class="c-key">"languages"</span>: <span class="c-brace">[</span>
+    <span class="c-str">"Marathi"</span>, <span class="c-str">"English"</span>,
+    <span class="c-str">"German (A2)"</span>
+  <span class="c-brace">]</span>,
+  <span class="c-key">"softSkills"</span>: <span class="c-brace">[</span>
+    <span class="c-str">"Leadership"</span>,
+    <span class="c-str">"Problem Solving"</span>,
+    <span class="c-str">"Public Speaking"</span>,
+    <span class="c-str">"Team Management"</span>
+  <span class="c-brace">]</span>,
+  <span class="c-key">"status"</span>: <span class="c-str c-green">"Open to Work"</span>
+<span class="c-brace">}</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-label reveal-up">02 // SKILLS</div>
+            <h2 class="section-title centered reveal-up">Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-category reveal-up">
+                    <div class="skill-cat-icon">⚙️</div>
+                    <h3 class="skill-cat-title">Languages</h3>
+                    <div class="skill-tags">
+                        <span class="stag">Python</span>
+                        <span class="stag">Java</span>
+                        <span class="stag">C++</span>
+                        <span class="stag">JavaScript</span>
+                        <span class="stag">SQL</span>
+                        <span class="stag">Go</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-cat-icon">🤖</div>
+                    <h3 class="skill-cat-title">AI / ML</h3>
+                    <div class="skill-tags">
+                        <span class="stag highlight">LangChain</span>
+                        <span class="stag highlight">LangGraph</span>
+                        <span class="stag highlight">RAG</span>
+                        <span class="stag highlight">Whisper AI</span>
+                        <span class="stag highlight">Vector DBs</span>
+                        <span class="stag highlight">Embeddings</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-cat-icon">🗄️</div>
+                    <h3 class="skill-cat-title">Databases</h3>
+                    <div class="skill-tags">
+                        <span class="stag">MongoDB</span>
+                        <span class="stag">PostgreSQL</span>
+                        <span class="stag">Redis</span>
+                        <span class="stag">Vector DB</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal-up">
+                    <div class="skill-cat-icon">🛠️</div>
+                    <h3 class="skill-cat-title">Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="stag">Git</span>
+                        <span class="stag">GitHub</span>
+                        <span class="stag">Docker</span>
+                        <span class="stag">FastAPI</span>
+                        <span class="stag">WebSockets</span>
+                        <span class="stag">React</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-bars reveal-up">
+                <div class="sbar-item">
+                    <div class="sbar-label"><span>Python & AI Frameworks</span><span class="sbar-pct">92%</span></div>
+                    <div class="sbar-track">
+                        <div class="sbar-fill" data-width="92"></div>
+                    </div>
+                </div>
+                <div class="sbar-item">
+                    <div class="sbar-label"><span>Backend Development</span><span class="sbar-pct">85%</span></div>
+                    <div class="sbar-track">
+                        <div class="sbar-fill" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="sbar-item">
+                    <div class="sbar-label"><span>Database Engineering</span><span class="sbar-pct">80%</span></div>
+                    <div class="sbar-track">
+                        <div class="sbar-fill" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="sbar-item">
+                    <div class="sbar-label"><span>DevOps & Containerisation</span><span class="sbar-pct">75%</span>
+                    </div>
+                    <div class="sbar-track">
+                        <div class="sbar-fill" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="sbar-item">
+                    <div class="sbar-label"><span>Frontend (React / JS)</span><span class="sbar-pct">70%</span></div>
+                    <div class="sbar-track">
+                        <div class="sbar-fill" data-width="70"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-label reveal-up">03 // PROJECTS</div>
+            <h2 class="section-title centered reveal-up">Featured Work</h2>
+            <div class="projects-grid">
+
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-num">01</div>
+                    <div class="project-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon">🤖</div>
+                        <div class="project-badges"><span class="badge">AI</span><span class="badge">Multi-Agent</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">AI Multi-Agent<br />Operating System</h3>
+                    <p class="project-desc">Designed a multi-agent AI system where specialized AI agents collaboratively
+                        perform complex tasks — planning, research, memory retrieval, and response generation.
+                        Implemented agent orchestration, long-term memory, and tool-calling pipelines.</p>
+                    <div class="project-stack">
+                        <span class="pstag">Python</span><span class="pstag">FastAPI</span><span
+                            class="pstag">LangGraph</span><span class="pstag">Redis</span><span class="pstag">Vector
+                            DB</span><span class="pstag">Docker</span><span class="pstag">React</span>
+                    </div>
+                    <div class="project-footer"><a href="https://github.com/mandar-1dev" target="_blank"
+                            class="proj-link">View on GitHub →</a></div>
+                </div>
+
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-num">02</div>
+                    <div class="project-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon">🎤</div>
+                        <div class="project-badges"><span class="badge">Distributed</span><span
+                                class="badge">Real-time</span></div>
+                    </div>
+                    <h3 class="project-title">Distributed AI<br />Interview Simulator</h3>
+                    <p class="project-desc">Built an AI-powered interview simulation platform featuring real-time
+                        voice/text interaction, adaptive questioning, and performance evaluation. Designed scalable
+                        backend services with async processing.</p>
+                    <div class="project-stack">
+                        <span class="pstag">Python</span><span class="pstag">FastAPI</span><span
+                            class="pstag">WebSockets</span><span class="pstag">React</span><span
+                            class="pstag">PostgreSQL</span><span class="pstag">Whisper AI</span><span
+                            class="pstag">Docker</span>
+                    </div>
+                    <div class="project-footer"><a href="https://github.com/mandar-1dev" target="_blank"
+                            class="proj-link">View on GitHub →</a></div>
+                </div>
+
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-num">03</div>
+                    <div class="project-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon">🧠</div>
+                        <div class="project-badges"><span class="badge">RAG</span><span class="badge">Knowledge
+                                OS</span></div>
+                    </div>
+                    <h3 class="project-title">AI Memory Engine &amp;<br />Knowledge OS</h3>
+                    <p class="project-desc">Developed an AI memory engine capable of semantic search, long-term context
+                        retention, and personalized knowledge retrieval using vector embeddings and retrieval-augmented
+                        generation (RAG) pipelines.</p>
+                    <div class="project-stack">
+                        <span class="pstag">Python</span><span class="pstag">Vector DBs</span><span
+                            class="pstag">RAG</span><span class="pstag">FastAPI</span><span
+                            class="pstag">PostgreSQL</span><span class="pstag">Redis</span>
+                    </div>
+                    <div class="project-footer"><a href="https://github.com/mandar-1dev" target="_blank"
+                            class="proj-link">View on GitHub →</a></div>
+                </div>
+
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-num">04</div>
+                    <div class="project-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon">📷</div>
+                        <div class="project-badges"><span class="badge">Python</span><span
+                                class="badge">Automation</span></div>
+                    </div>
+                    <h3 class="project-title">AI-Based Attendance<br />System</h3>
+                    <p class="project-desc">Automated attendance tracking system using Python to eliminate manual
+                        effort. Detects and logs attendance intelligently and generates structured academic reports for
+                        institutional use.</p>
+                    <div class="project-stack">
+                        <span class="pstag">Python</span><span class="pstag">OpenCV</span><span
+                            class="pstag">NumPy</span><span class="pstag">Pandas</span><span class="pstag">Report
+                            Gen</span>
+                    </div>
+                    <div class="project-footer"><a href="https://github.com/mandar-1dev" target="_blank"
+                            class="proj-link">View on GitHub →</a></div>
+                </div>
+
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-num">05</div>
+                    <div class="project-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon">📄</div>
+                        <div class="project-badges"><span class="badge">NLP</span><span class="badge">AI Tool</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Smart Resume<br />Analyzer</h3>
+                    <p class="project-desc">AI-based tool that extracts and analyzes skills from resumes using NLP.
+                        Identifies skill gaps by intelligently matching candidate profiles against target job roles and
+                        provides actionable feedback.</p>
+                    <div class="project-stack">
+                        <span class="pstag">Python</span><span class="pstag">NLP</span><span
+                            class="pstag">spaCy</span><span class="pstag">NLTK</span><span class="pstag">FastAPI</span>
+                    </div>
+                    <div class="project-footer"><a href="https://github.com/mandar-1dev" target="_blank"
+                            class="proj-link">View on GitHub →</a></div>
+                </div>
+
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-num">06</div>
+                    <div class="project-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon">💰</div>
+                        <div class="project-badges"><span class="badge">Finance</span><span
+                                class="badge">Analytics</span></div>
+                    </div>
+                    <h3 class="project-title">Personal Finance &amp;<br />Expense Tracker</h3>
+                    <p class="project-desc">Tracks daily expenses and categorizes spending patterns with visual
+                        analytics. Provides actionable insights and trend analysis to support smarter personal financial
+                        planning decisions.</p>
+                    <div class="project-stack">
+                        <span class="pstag">Python</span><span class="pstag">Pandas</span><span
+                            class="pstag">Matplotlib</span><span class="pstag">SQLite</span><span
+                            class="pstag">Dashboard</span>
+                    </div>
+                    <div class="project-footer"><a href="https://github.com/mandar-1dev" target="_blank"
+                            class="proj-link">View on GitHub →</a></div>
+                </div>
+
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-num">07</div>
+                    <div class="project-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon">🎓</div>
+                        <div class="project-badges"><span class="badge">Web App</span><span class="badge">Chatbot</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Online Exam System &amp;<br />College Helpdesk Bot</h3>
+                    <p class="project-desc">Web-based examination platform with automated evaluation and instant
+                        grading. Includes an AI chatbot that handles common academic queries, reducing repetitive
+                        workload for faculty.</p>
+                    <div class="project-stack">
+                        <span class="pstag">Python</span><span class="pstag">Flask</span><span
+                            class="pstag">JavaScript</span><span class="pstag">SQLite</span><span
+                            class="pstag">Chatbot</span>
+                    </div>
+                    <div class="project-footer"><a href="https://github.com/mandar-1dev" target="_blank"
+                            class="proj-link">View on GitHub →</a></div>
+                </div>
+
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-num">08</div>
+                    <div class="project-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon">🎨</div>
+                        <div class="project-badges"><span class="badge">Generative AI</span><span
+                                class="badge">Animation</span></div>
+                    </div>
+                    <h3 class="project-title">AI Animation<br />Creator</h3>
+                    <p class="project-desc">Logic-driven tool for generating animated visual content based on user input
+                        and prompt instructions. Uses AI decision pipelines to produce creative, dynamic animations
+                        programmatically.</p>
+                    <div class="project-stack">
+                        <span class="pstag">Python</span><span class="pstag">Generative AI</span><span
+                            class="pstag">Manim</span><span class="pstag">PIL</span><span class="pstag">API</span>
+                    </div>
+                    <div class="project-footer"><a href="https://github.com/mandar-1dev" target="_blank"
+                            class="proj-link">View on GitHub →</a></div>
+                </div>
+
+                <div class="project-card reveal-up" data-tilt>
+                    <div class="project-num">09</div>
+                    <div class="project-glow"></div>
+                    <div class="project-header">
+                        <div class="project-icon">📚</div>
+                        <div class="project-badges"><span class="badge">Productivity</span><span class="badge">Student
+                                Tool</span></div>
+                    </div>
+                    <h3 class="project-title">Smart Study<br />Planner App</h3>
+                    <p class="project-desc">Helps students organize study schedules, set smart reminders, and track
+                        learning progress over time. Built with task management and productivity features to improve
+                        student time management.</p>
+                    <div class="project-stack">
+                        <span class="pstag">Python</span><span class="pstag">React</span><span
+                            class="pstag">SQLite</span><span class="pstag">FastAPI</span><span
+                            class="pstag">Notifications</span>
+                    </div>
+                    <div class="project-footer"><a href="https://github.com/mandar-1dev" target="_blank"
+                            class="proj-link">View on GitHub →</a></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section education" id="education">
+        <div class="container">
+            <div class="section-label reveal-up">04 // EDUCATION</div>
+            <h2 class="section-title centered reveal-up">Academic Journey</h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="tl-year">2025 → Present</div>
+                        <h3 class="tl-degree">B.Tech — CSE (Data Science)</h3>
+                        <p class="tl-school">NIAT × Ajeenkya DY Patil University, Pune</p>
+                        <div class="tl-cgpa">
+                            <span>CGPA</span>
+                            <div class="cgpa-bar">
+                                <div class="cgpa-fill" style="width:0%"></div>
+                            </div>
+                            <span class="cgpa-val">8.41 / 10</span>
+                        </div>
+                        <div class="tl-tags">
+                            <span>Data Science</span><span>Computer Science</span><span>AI/ML</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-label reveal-up">05 // CONTACT</div>
+            <h2 class="section-title centered reveal-up">Let's Build<br /><em>Together</em></h2>
+            <p class="contact-sub reveal-up">I'm actively looking for opportunities in AI engineering, backend
+                development, and innovative tech roles. Drop me a message!</p>
+            <div class="contact-links reveal-up">
+                <a href="mailto:mandar.acse4@gmail.com" class="contact-card">
+                    <div class="cc-icon">✉️</div>
+                    <div class="cc-info"><span class="cc-label">Email</span><span
+                            class="cc-value">mandar.acse4@gmail.com</span></div>
+                    <div class="cc-arrow">→</div>
+                </a>
+                <a href="tel:+919284647053" class="contact-card">
+                    <div class="cc-icon">📱</div>
+                    <div class="cc-info"><span class="cc-label">Phone</span><span class="cc-value">+91 9284647053</span>
+                    </div>
+                    <div class="cc-arrow">→</div>
+                </a>
+                <a href="https://linkedin.com/in/mandar-acse" target="_blank" class="contact-card">
+                    <div class="cc-icon">💼</div>
+                    <div class="cc-info"><span class="cc-label">LinkedIn</span><span class="cc-value">mandar-acse</span>
+                    </div>
+                    <div class="cc-arrow">→</div>
+                </a>
+                <a href="https://github.com/mandar-1dev" target="_blank" class="contact-card">
+                    <div class="cc-icon">🐙</div>
+                    <div class="cc-info"><span class="cc-label">GitHub</span><span class="cc-value">mandar-1dev</span>
+                    </div>
+                    <div class="cc-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Designed &amp; Built by <span class="footer-name">Mandar Suryavanshi</span></p>
+        <p class="footer-sub">© 2026 · Pune, India</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
